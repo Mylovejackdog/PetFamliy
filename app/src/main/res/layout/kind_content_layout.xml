@@ -1,0 +1,127 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical">
+
+<ScrollView
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content">
+<LinearLayout
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:orientation="vertical"
+    >
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="45dp"
+        android:background="@color/green"
+        android:gravity="center">
+        <ImageView
+            android:id="@+id/kind_main_back"
+            android:src="@mipmap/icon_introdution_button_back"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            />
+        <TextView
+            android:layout_width="0dp"
+            android:layout_weight="1"
+            android:layout_height="wrap_content"
+            android:gravity="center"
+            android:layout_gravity="center"
+            android:text="详情"
+            android:layout_marginRight="30dp"
+            android:textColor="@color/white"
+            android:textSize="20sp" />
+
+
+    </LinearLayout>
+
+    <TextView
+        android:id="@+id/dog_name"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text=""
+        android:padding="10dp"
+        android:layout_margin="5dp"
+        android:layout_gravity="center"
+        android:gravity="center"
+        android:textSize="18sp" />
+   <LinearLayout
+       android:layout_width="match_parent"
+       android:layout_height="250dp"
+       android:orientation="horizontal"
+       android:padding="8dp"
+       >
+       <ImageView
+           android:id="@+id/iv_head"
+           android:layout_width="0dp"
+           android:layout_weight="1"
+           android:layout_height="match_parent" />
+
+       <TextView
+           android:id="@+id/card"
+           android:layout_width="0dp"
+           android:layout_weight="1"
+           android:layout_height="match_parent" />
+
+   </LinearLayout>
+<TextView
+    android:text="简介"
+    android:textSize="18sp"
+    android:layout_marginLeft="8dp"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content" />
+
+ <TextView
+     android:id="@+id/information"
+     android:padding="10dp"
+     android:textSize="16sp"
+     android:layout_width="match_parent"
+     android:layout_height="wrap_content" />
+
+<RadioGroup
+    android:id="@+id/rg_kind_main"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:layout_weight="1"
+    android:layout_margin="8dp"
+    android:orientation="horizontal"
+    android:layout_gravity="center"
+    android:background="@color/gray"
+    android:gravity="center"
+    >
+    <RadioButton
+        android:id="@+id/rb_one"
+        android:text="性格特点"
+        android:checked="true"
+        android:gravity="center"
+        style="@style/kind"
+        />
+    <RadioButton
+        android:id="@+id/rb_two"
+        android:text="形态特征"
+        style="@style/kind"
+        />
+    <RadioButton
+        android:id="@+id/rb_three"
+        android:text="喂食要点"
+        style="@style/kind"
+        />
+    <RadioButton
+        android:id="@+id/rb_four"
+        android:text="生活习性"
+        style="@style/kind"
+        />
+    
+</RadioGroup>
+
+
+ <FrameLayout
+     android:id="@+id/fl_text_main"
+     android:layout_width="match_parent"
+     android:layout_height="wrap_content"
+     android:padding="10dp"/>
+</LinearLayout>
+</ScrollView>
+</LinearLayout>

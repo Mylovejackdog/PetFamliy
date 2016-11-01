@@ -1,0 +1,53 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:orientation="vertical" android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+<LinearLayout
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content">
+  <ImageView
+      android:id="@+id/iv_content"
+      android:layout_margin="8dp"
+      android:layout_width="0dp"
+      android:layout_weight="1"
+      android:layout_height="160dp" />
+
+ <RelativeLayout
+     android:layout_width="0dp"
+     android:layout_weight="2"
+     android:layout_margin="8dp"
+     android:layout_height="match_parent">
+
+     <TextView
+         android:id="@+id/hair_title"
+         android:text="泰迪"
+         android:layout_marginTop="16dp"
+          android:layout_width="wrap_content"
+         android:layout_height="wrap_content" />
+
+     <TextView
+         android:id="@+id/hair_introdution"
+         android:layout_below="@+id/hair_title"
+         android:layout_alignLeft="@+id/hair_title"
+         android:layout_marginTop="16dp"
+         android:text="简介："
+         android:layout_width="wrap_content"
+         android:layout_height="wrap_content" />
+     <TextView
+         android:id="@+id/dog_content"
+         android:layout_below="@+id/hair_introdution"
+         android:layout_alignLeft="@+id/hair_introdution"
+         android:lines="2"
+         android:ellipsize="end"
+         android:layout_width="wrap_content"
+         android:layout_height="wrap_content" />
+
+
+ </RelativeLayout>
+
+
+
+</LinearLayout>
+
+</LinearLayout>

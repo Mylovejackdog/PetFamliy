@@ -11,6 +11,7 @@ import android.widget.RadioGroup;
 import com.example.anzhuo.petfamliy.Community.CommunityFragment;
 import com.example.anzhuo.petfamliy.Home.HomeFragment;
 import com.example.anzhuo.petfamliy.Mine.UI.Fragment.MineFragment;
+
 import com.example.anzhuo.petfamliy.R;
 
 import cn.bmob.v3.Bmob;
@@ -38,13 +39,9 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
         rb_home = (RadioButton) findViewById(R.id.rb_home);
         rb_community = (RadioButton) findViewById(R.id.rb_community);
         rb_mine = (RadioButton) findViewById(R.id.rb_mine);
-
-
-
         rb_home.setOnClickListener(this);
         rb_community.setOnClickListener(this);
         rb_mine.setOnClickListener(this);
-
         showFragment(0);
     }
 

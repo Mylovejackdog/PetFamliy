@@ -29,7 +29,6 @@
         <item name="android:textSize">16sp</item>
     </style>
 
-
     <style name="AppTheme.NoActionBar">
         <item name="windowActionBar">false</item>
         <item name="windowNoTitle">true</item>
@@ -108,4 +107,13 @@
         <item name="android:gravity">center</item>
     </style>
 
+    <style name="community">
+        <item name="android:textSize">16dp</item>
+        <item name="android:layout_width">0dp</item>
+        <item name="android:layout_weight">1</item>
+        <item name="android:layout_height">wrap_content</item>
+        <item name="android:gravity">center</item>
+        <item name="android:button">@null</item>
+        <item name="android:textColor">@color/text_color</item>
+    </style>
 </resources>

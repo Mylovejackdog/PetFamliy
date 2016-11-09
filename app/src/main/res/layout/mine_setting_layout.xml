@@ -1,0 +1,73 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:orientation="vertical"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/white"
+    >
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="45dp"
+        android:background="@color/green"
+        android:gravity="center">
+        <ImageView
+            android:id="@+id/kind_main_back"
+            android:src="@mipmap/icon_introdution_button_back"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            />
+        <TextView
+            android:layout_width="0dp"
+            android:layout_weight="1"
+            android:layout_height="wrap_content"
+            android:gravity="center"
+            android:layout_gravity="center"
+            android:text="设置"
+            android:layout_marginRight="30dp"
+            android:textColor="@color/white"
+            android:textSize="20sp" />
+    </LinearLayout>
+
+    <ImageView
+        android:id="@+id/iv_head"
+        android:layout_width="80dp"
+        android:layout_height="80dp"
+        android:src="@mipmap/share_personal_default"
+        android:layout_gravity="center_horizontal"
+        android:layout_margin="30dp"
+        />
+
+    <LinearLayout
+        android:background="@color/white"
+        android:layout_marginBottom="1dp"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+        <TextView
+            android:id="@+id/alter_pwd"
+            android:layout_marginLeft="16dp"
+            android:drawableLeft="@mipmap/icon_message_interview"
+            android:drawablePadding="10dp"
+            android:text="修改密码"
+            android:drawableRight="@drawable/lsq_style_default_arrow_more_right"
+            android:gravity="center_vertical"
+            android:layout_width="0dp"
+            android:layout_weight="1"
+            android:layout_height="wrap_content" />
+    </LinearLayout>
+
+    <Button
+        android:id="@+id/exit_login"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="16dp"
+        android:layout_marginLeft="16dp"
+        android:layout_marginRight="16dp"
+        android:background="@color/green"
+        android:text="退出登入"
+        android:textColor="@color/white"
+        android:textSize="20sp"
+
+        />
+
+</LinearLayout>

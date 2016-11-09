@@ -11,7 +11,6 @@ import android.widget.TextView;
 
 import com.bumptech.glide.Glide;
 import com.example.anzhuo.petfamliy.BmobDataInfo.dog_Disease;
-import com.example.anzhuo.petfamliy.BmobDataInfo.dog_Expertise;
 import com.example.anzhuo.petfamliy.R;
 
 import java.util.List;

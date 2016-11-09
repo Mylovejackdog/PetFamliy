@@ -1,7 +1,6 @@
 package com.example.anzhuo.petfamliy.Main;
 
 import android.os.Bundle;
-import android.support.annotation.Nullable;
 import android.support.v4.app.FragmentManager;
 import android.support.v4.app.FragmentTransaction;
 import android.support.v7.app.AppCompatActivity;
@@ -11,6 +10,7 @@ import android.widget.RadioGroup;
 
 import com.example.anzhuo.petfamliy.Community.CommunityFragment;
 import com.example.anzhuo.petfamliy.Home.HomeFragment;
+import com.example.anzhuo.petfamliy.Mine.UI.Fragment.MineFragment;
 import com.example.anzhuo.petfamliy.R;
 
 import cn.bmob.v3.Bmob;
@@ -30,7 +30,7 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
     FragmentTransaction transaction;
 
     @Override
-    protected void onCreate(@Nullable Bundle savedInstanceState) {
+    protected void onCreate( Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.main_layout);
         Bmob.initialize(this, "8456bf8d25dc1d6b2ba651eb5756ed67");

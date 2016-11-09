@@ -32,6 +32,9 @@
 
     <uses-permission android:name="android.permission.INTERNET"/>
     <uses-permission android:name="android.permission.WRITE_SETTINGS"/>
+    <uses-permission android:name="android.permission.INTERNET" />
+
+
 
 
     <application
@@ -44,54 +47,59 @@
 
 
         <activity android:name=".Main.MainActivity">
+
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
 
-            </activity>
+        </activity>
         <activity android:name=".Home.KindTextFragment.KindMainActivity">
-
-
         </activity>
         <activity android:name=".Home.KindListViewActivity">
-
-
         </activity>
         <activity android:name=".Home.EncyclopediaListViewActivity">
-
-
         </activity>
         <activity android:name=".Home.HairKindActivity">
-
-
         </activity>
         <activity android:name=".Home.NutritionActivity">
-
-
         </activity>
         <activity android:name=".Home.ExpertiseListViewActivity">
-
-
         </activity>
         <activity android:name=".Home.ExpertiseContentActivity">
-
-
         </activity>
         <activity android:name=".Home.DiseaseListViewActivity">
-
-
         </activity>
         <activity android:name=".Home.DiseaseContentActivity">
-
+        </activity>
+        <activity android:name=".Mine.UI.LoginActivity">
 
         </activity>
-        <activity
-            android:name="com.mob.tools.MobUIShell"
-            android:theme="@android:style/Theme.Translucent.NoTitleBar"
-            android:configChanges="keyboardHidden|orientation|screenSize"
-            android:windowSoftInputMode="stateHidden|adjustResize"/>
+        <activity android:name=".Mine.UI.RegisterActivity">
+        </activity>
+        <activity android:name=".Mine.UI.AlterPwdAcivity">
+        </activity>
+        <activity android:name=".Mine.UI.ForgotPasswordActivity">
+        </activity>
+        <activity android:name=".Mine.UI.MineSettingActivity">
+        </activity>
+        <activity android:name=".Mine.UI.MyHeadActivity">
+        </activity>
+        <activity android:name=".Mine.UI.MyHomePapeAtivity">
+        </activity>
+        <activity android:name=".Mine.UI.MyLoveActivity">
+        </activity>
+        <activity android:name=".Mine.UI.MyPrefileActivity">
+        </activity>
+        <activity android:name=".Mine.UI.RedactPrefileActivity">
+        </activity>
+        <activity android:name=".Mine.UI.UserAgreementActivity">
+        </activity>
+        <activity android:name=".Mine.UI.MineContactOfficialActivity">
+        </activity>
+
+
 
 
     </application>

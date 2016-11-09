@@ -14,4 +14,27 @@ public class Comment extends BmobObject {
 
     private Post post; //所评论的帖子，这里体现的是一对多的关系，一个评论只能属于一个微博
 
+    public String getContent() {
+        return content;
+    }
+
+    public void setContent(String content) {
+        this.content = content;
+    }
+
+    public User getUser() {
+        return user;
+    }
+
+    public void setUser(User user) {
+        this.user = user;
+    }
+
+    public Post getPost() {
+        return post;
+    }
+
+    public void setPost(Post post) {
+        this.post = post;
+    }
 }

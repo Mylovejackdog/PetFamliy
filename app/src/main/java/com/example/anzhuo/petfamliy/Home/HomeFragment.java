@@ -293,21 +293,16 @@ public class HomeFragment extends Fragment implements View.OnClickListener {
         initData();
         initAction();
         starThread();
-        new Thread(new Runnable() {
-            @Override
-            public void run() {
-                while (!isStop) {
-                    SystemClock.sleep(2000);
-                    getActivity().runOnUiThread(new Runnable() {
+
+        handler.postDelayed(new Runnable() {
                         @Override
                         public void run() {
                             mViewPager.setCurrentItem(mViewPager.getCurrentItem() + 1);
+                            if(!isStop){
+                                handler.postDelayed(this,2000);
+                            }
                         }
-                    });
-                }
-            }
-
-        }).start();
+                    },2000);
 
         return mainview;
     }

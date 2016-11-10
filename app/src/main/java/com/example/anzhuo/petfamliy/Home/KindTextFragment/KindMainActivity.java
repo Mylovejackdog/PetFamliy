@@ -97,6 +97,7 @@ public class KindMainActivity extends AppCompatActivity implements View.OnClickL
         rb_four.setOnClickListener(this);
         kind_main_back.setOnClickListener(this);
 
+        showFragment(0);
     }
 
     private void showFragment(int i) {

@@ -9,6 +9,7 @@ import android.widget.EditText;
 import android.widget.ImageView;
 import android.widget.Toast;
 
+import com.example.anzhuo.petfamliy.AdapterInfo.MyUser;
 import com.example.anzhuo.petfamliy.Mine.Base.User;
 import com.example.anzhuo.petfamliy.R;
 
@@ -22,7 +23,8 @@ import cn.bmob.v3.listener.UpdateListener;
  */
 
 public class AlterPwdAcivity extends Activity {
-    ImageView kind_main_back,iv_head;
+    ImageView kind_main_back;
+    com.facebook.drawee.view.SimpleDraweeView iv_head;
     EditText  old_pwd,new_pwd;
     Button   bt_keep;
 
@@ -33,13 +35,19 @@ public class AlterPwdAcivity extends Activity {
         setContentView(R.layout.alter_pwd_layout);
 
         kind_main_back= (ImageView) findViewById(R.id.kind_main_back);
-        iv_head= (ImageView) findViewById(R.id.iv_head);
+        iv_head= (com.facebook.drawee.view.SimpleDraweeView) findViewById(R.id.iv_head);
         old_pwd= (EditText) findViewById(R.id.old_pwd);
         new_pwd= (EditText) findViewById(R.id.new_pwd);
         bt_keep= (Button) findViewById(R.id.bt_keep);
 
+        MyUser user=BmobUser.getCurrentUser(MyUser.class);
+        if(user!=null){
+            iv_head.setImageURI(user.getImg_head().getUrl());
+        }else {
+            iv_head.setImageResource(R.mipmap.share_personal_default);
+        }
         //返回我的页面
-        iv_head.setOnClickListener(new View.OnClickListener() {
+       kind_main_back.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
                 finish();

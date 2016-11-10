@@ -1,5 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:fresco="http://schemas.android.com/apk/res-auto"
     android:orientation="vertical" android:layout_width="match_parent"
     android:layout_height="match_parent">
     <LinearLayout
@@ -29,12 +30,13 @@
     android:gravity="center_vertical"
     android:layout_width="match_parent"
     android:layout_height="wrap_content">
-    <ImageView
+    <com.facebook.drawee.view.SimpleDraweeView
         android:id="@id/iv_head"
-        android:src="@mipmap/share_personal_default"
+        fresco:placeholderImage="@mipmap/share_personal_default"
         android:layout_margin="8dp"
-        android:layout_width="80dp"
-        android:layout_height="80dp" />
+        android:layout_width="60dp"
+        android:layout_height="60dp"
+        fresco:roundAsCircle="true" />
 
     <TextView
         android:id="@+id/mine_name"
@@ -49,7 +51,7 @@
 
     <LinearLayout
         android:background="@color/white"
-        android:layout_marginBottom="1dp"
+        android:layout_marginBottom="6dp"
         android:layout_width="match_parent"
         android:layout_height="wrap_content">
 
@@ -70,7 +72,7 @@
 
     <LinearLayout
         android:background="@color/white"
-        android:layout_marginBottom="1dp"
+        android:layout_marginBottom="6dp"
         android:layout_width="match_parent"
         android:layout_height="wrap_content">
         <TextView
@@ -90,7 +92,7 @@
     </LinearLayout>
     <LinearLayout
         android:background="@color/white"
-        android:layout_marginBottom="1dp"
+        android:layout_marginBottom="6dp"
         android:layout_width="match_parent"
         android:layout_height="wrap_content">
         <TextView
@@ -110,7 +112,7 @@
     </LinearLayout>
     <LinearLayout
         android:background="@color/white"
-        android:layout_marginBottom="1dp"
+        android:layout_marginBottom="6dp"
         android:layout_width="match_parent"
         android:layout_height="wrap_content">
         <TextView
@@ -130,7 +132,7 @@
     </LinearLayout>
     <LinearLayout
         android:background="@color/white"
-        android:layout_marginBottom="1dp"
+        android:layout_marginBottom="16dp"
         android:layout_width="match_parent"
         android:layout_height="wrap_content">
         <TextView
@@ -151,7 +153,6 @@
 
     <LinearLayout
         android:background="@color/white"
-        android:layout_marginTop="10dp"
         android:layout_width="match_parent"
         android:layout_height="wrap_content">
         <TextView

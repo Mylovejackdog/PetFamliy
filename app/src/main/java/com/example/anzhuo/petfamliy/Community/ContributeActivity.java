@@ -73,7 +73,12 @@ public class ContributeActivity extends Activity implements ChooseAdapter.OnItme
         rv_photo.setLayoutManager(new GridLayoutManager(this,3));
         rv_photo.setAdapter(mAdapter);
         rv_photo.addItemDecoration(new GridSpacingItemDecoration(3,4,true));
-
+        iv_return.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                finish();
+            }
+        });
         et_content.addTextChangedListener(new TextWatcher() {
             @Override
             public void beforeTextChanged(CharSequence charSequence, int i, int i1, int i2) {

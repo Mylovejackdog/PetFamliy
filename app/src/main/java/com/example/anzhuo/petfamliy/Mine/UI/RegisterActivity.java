@@ -160,7 +160,7 @@ public class RegisterActivity extends Activity implements View.OnClickListener{
                     userInfo.setPassword(et_pwd.getText().toString());
                     userInfo.setEmail(et_email.getText().toString());
                     userInfo.setNickname(et_name.getText().toString());
-                    userInfo.setHead(bmobFile);
+                    userInfo.setImg_head(bmobFile);
                     userInfo.signUp(new SaveListener<User>() {
                         @Override
                         public void done(User userInfo, BmobException e) {

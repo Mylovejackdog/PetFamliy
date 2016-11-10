@@ -11,7 +11,7 @@ public class User extends BmobUser {
     private String nickname;
     private String number;
     private String age;
-    private BmobFile head;
+    private BmobFile img_head;
 
     public String getNickname() {
         return nickname;
@@ -29,12 +29,12 @@ public class User extends BmobUser {
         this.age = age;
     }
 
-    public BmobFile getHead() {
-        return head;
+    public BmobFile getImg_head() {
+        return img_head;
     }
 
-    public void setHead(BmobFile head) {
-        this.head = head;
+    public void setImg_head(BmobFile img_head) {
+        this.img_head = img_head;
     }
 
     public String getNumber() {

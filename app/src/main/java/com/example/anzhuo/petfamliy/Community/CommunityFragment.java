@@ -14,13 +14,17 @@ import android.widget.RadioButton;
 import android.widget.RadioGroup;
 
 import com.example.anzhuo.petfamliy.Adapter.CommunityAdapter;
+import com.example.anzhuo.petfamliy.AdapterInfo.MyUser;
 import com.example.anzhuo.petfamliy.Community.PublishFragment.PhotoFragment;
 import com.example.anzhuo.petfamliy.Community.PublishFragment.RecommendFragment;
 import com.example.anzhuo.petfamliy.Community.PublishFragment.VideoFragment;
+import com.example.anzhuo.petfamliy.Mine.UI.LoginActivity;
 import com.example.anzhuo.petfamliy.R;
 
 import java.util.ArrayList;
 import java.util.List;
+
+import cn.bmob.v3.BmobUser;
 
 /**
  * Created by anzhuo on 2016/10/24.
@@ -47,7 +51,7 @@ public class CommunityFragment extends Fragment {
     @Override
     public void onViewCreated(View view, @Nullable Bundle savedInstanceState) {
         super.onViewCreated(view, savedInstanceState);
-        iv_myhead= (ImageView) view.findViewById(R.id.iv_myhead);
+        iv_myhead= (ImageView) view.findViewById(R.id.iv_write);
         community_write= (ImageView) view.findViewById(R.id.community_write);
         rg_matter= (RadioGroup) view.findViewById(R.id.rg_matter);
         rb_recommend= (RadioButton) view.findViewById(R.id.rb_recommend);
@@ -63,8 +67,16 @@ public class CommunityFragment extends Fragment {
         community_write.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                Intent intent=new Intent(getActivity(),ContributeActivity.class);
-                startActivity(intent);
+                MyUser user= BmobUser.getCurrentUser(MyUser.class);
+                  if(user!=null){
+
+                      Intent intent=new Intent(getActivity(),ContributeActivity.class);
+                      startActivity(intent);
+                  }else {
+                      Intent intent=new Intent(getActivity(), LoginActivity.class);
+                      startActivity(intent);
+                  }
+
             }
         });
         rg_matter.setOnCheckedChangeListener(new RadioGroup.OnCheckedChangeListener() {

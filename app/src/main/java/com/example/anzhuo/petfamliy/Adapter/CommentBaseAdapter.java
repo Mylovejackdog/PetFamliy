@@ -47,7 +47,7 @@ public class CommentBaseAdapter extends BaseAdapter {
         if (view == null) {
             view = LayoutInflater.from(context).inflate(R.layout.comment_item, null);
             viewHolder = new ViewHolder();
-            viewHolder.comment_head = (ImageView) view.findViewById(R.id.comment_head);
+            viewHolder.comment_head = (com.facebook.drawee.view.SimpleDraweeView) view.findViewById(R.id.comment_head);
             viewHolder.comment_name = (TextView) view.findViewById(R.id.comment_name);
             viewHolder.comment_time = (TextView) view.findViewById(R.id.comment_time);
             viewHolder.comment_content = (TextView) view.findViewById(R.id.comment_content);
@@ -56,7 +56,7 @@ public class CommentBaseAdapter extends BaseAdapter {
 
         viewHolder = (ViewHolder) view.getTag();
         Comment comment = list.get(i);
-        Glide.with(context).load(comment.getUser().getImg_head()).into(viewHolder.comment_head);
+       viewHolder.comment_head.setImageURI(comment.getUser().getImg_head().getUrl());
         viewHolder.comment_name.setText(comment.getUser().getNickName());
         viewHolder.comment_time.setText(comment.getCreatedAt());
         viewHolder.comment_content.setText(comment.getContent());
@@ -64,7 +64,7 @@ public class CommentBaseAdapter extends BaseAdapter {
     }
 
     class ViewHolder {
-        ImageView comment_head;
+        com.facebook.drawee.view.SimpleDraweeView comment_head;
         TextView comment_name;
         TextView comment_time;
         TextView comment_content;

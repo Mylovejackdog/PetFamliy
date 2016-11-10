@@ -37,7 +37,14 @@ dependencies {
     //bmob-im：Bmob的即时通讯包，注意每个版本的im依赖特定版本的bmob-sdk，具体的依赖关系可查看下面注释[2]
     compile 'cn.bmob.android:bmob-sdk:3.5.0'
     compile 'com.android.support:recyclerview-v7:24.2.0'
+
+    compile 'in.srain.cube:ultra-ptr:1.0.11'
     //图片选择器
     compile 'com.github.sd6352051:android-image-picker:v1.0.1'
     compile 'org.greenrobot:eventbus:3.0.0'
+
+    //圆头像
+    compile 'com.facebook.fresco:fresco:0.12.0'
+
+
 }

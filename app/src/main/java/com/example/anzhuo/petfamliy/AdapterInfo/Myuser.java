@@ -1,12 +1,14 @@
 package com.example.anzhuo.petfamliy.AdapterInfo;
 
+import java.io.Serializable;
+
 import cn.bmob.v3.BmobUser;
 import cn.bmob.v3.datatype.BmobFile;
 
 /**
  * Created by anzhuo on 2016/11/9.
  */
-public class MyUser extends BmobUser{
+public class MyUser extends BmobUser implements Serializable{
     private BmobFile img_head;
     private String nickName;
 

@@ -167,7 +167,7 @@ public class MyHeadActivity extends Activity implements View.OnClickListener {
     public void uploadHead(View view) {
         final BmobFile bmobFile = new BmobFile(file);
         User user=new User();
-        user.setHead(bmobFile);
+        user.setImg_head(bmobFile);
         User user1= BmobUser.getCurrentUser(User.class);
 
         user.update(user1.getObjectId(), new UpdateListener() {

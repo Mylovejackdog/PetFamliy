@@ -1,5 +1,7 @@
 package com.example.anzhuo.petfamliy.AdapterInfo;
 
+import java.io.Serializable;
+
 import cn.bmob.v3.BmobObject;
 import cn.bmob.v3.datatype.BmobFile;
 import cn.bmob.v3.datatype.BmobRelation;
@@ -7,7 +9,7 @@ import cn.bmob.v3.datatype.BmobRelation;
 /**
  * Created by anzhuo on 2016/11/9.
  */
-public class Post  extends BmobObject {
+public class Post  extends BmobObject implements Serializable{
 
     private String title;//帖子标题
 

@@ -13,6 +13,7 @@ import com.example.anzhuo.petfamliy.Home.HomeFragment;
 import com.example.anzhuo.petfamliy.Mine.UI.Fragment.MineFragment;
 
 import com.example.anzhuo.petfamliy.R;
+import com.facebook.drawee.backends.pipeline.Fresco;
 
 import cn.bmob.v3.Bmob;
 
@@ -35,6 +36,7 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
         super.onCreate(savedInstanceState);
         setContentView(R.layout.main_layout);
         Bmob.initialize(this, "8456bf8d25dc1d6b2ba651eb5756ed67");
+        Fresco.initialize(this);
         rg_main = (RadioGroup) findViewById(R.id.rg_main);
         rb_home = (RadioButton) findViewById(R.id.rb_home);
         rb_community = (RadioButton) findViewById(R.id.rb_community);

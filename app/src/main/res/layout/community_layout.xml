@@ -9,8 +9,9 @@
         android:gravity="center"
         >
         <ImageView
-            android:id="@+id/iv_myhead"
+            android:id="@+id/iv_myHead"
             android:src="@drawable/myhead"
+            android:layout_margin="8dp"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             />
@@ -23,13 +24,13 @@
             android:gravity="center"
             android:layout_gravity="center"
             android:text="狗狗社区"
-            android:layout_marginRight="30dp"
             android:textColor="@color/white"
             android:textSize="20sp" />
 
 <ImageView
     android:id="@+id/community_write"
-    android:src="@drawable/theme_qupai_default_btn_edit_overlay_text_press"
+    android:src="@drawable/write"
+    android:layout_margin="8dp"
     android:layout_width="wrap_content"
     android:layout_height="wrap_content" />
 

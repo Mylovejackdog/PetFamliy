@@ -5,6 +5,7 @@ import android.content.DialogInterface;
 import android.content.Intent;
 import android.os.Bundle;
 import android.support.v4.app.Fragment;
+import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -31,7 +32,7 @@ import cn.bmob.v3.BmobUser;
 
 public class MineFragment extends Fragment implements View.OnClickListener {
     LinearLayout ll_login;
-    ImageView    iv_head;
+    com.facebook.drawee.view.SimpleDraweeView  iv_head;
     TextView     mine_name,mine_main,mine_love,mine_message,mine_circle,mine_setting,mine_match;
     User user;
 
@@ -48,7 +49,7 @@ public class MineFragment extends Fragment implements View.OnClickListener {
     public void onViewCreated(View view,  Bundle savedInstanceState) {
         super.onViewCreated(view, savedInstanceState);
         ll_login= (LinearLayout) view.findViewById(R.id.ll_login);
-        iv_head= (ImageView) view.findViewById(R.id.iv_head);
+        iv_head= (com.facebook.drawee.view.SimpleDraweeView)view.findViewById(R.id.iv_head);
         mine_name= (TextView) view.findViewById(R.id.mine_name);
         mine_main= (TextView) view.findViewById(R.id.mine_main);
         mine_love= (TextView) view.findViewById(R.id.mine_love);
@@ -60,8 +61,8 @@ public class MineFragment extends Fragment implements View.OnClickListener {
         user= BmobUser.getCurrentUser(User.class);
         if (user != null) {
             //     Log.i("LW",userInfo.getHead().getFileUrl()+"");
-            if(user.getHead()!=null) {
-                Glide.with(getActivity()).load(user.getHead().getFileUrl()).asBitmap().into(iv_head);
+            if(user.getImg_head()!=null) {
+                iv_head.setImageURI(user.getImg_head().getUrl());
             }
             else {
                 iv_head.setImageResource(R.mipmap.share_personal_default);
@@ -89,6 +90,7 @@ public class MineFragment extends Fragment implements View.OnClickListener {
         switch (v.getId()){
             case R.id.iv_head:
                if (user==null) {
+                   Log.i("heheh","dksllfhdklshflkdshlkdsf");
                    Intent intent = new Intent(getActivity(), LoginActivity.class);
                    startActivity(intent);
                }else {
@@ -115,12 +117,29 @@ public class MineFragment extends Fragment implements View.OnClickListener {
                 }
                 break;
             case R.id.mine_message:
+                if (user!=null){
+
+                }else {
+                    Intent intent5 = new Intent(getActivity(), LoginActivity.class);
+                    startActivity(intent5);
+                }
                 break;
             case R.id.mine_circle:
+                if (user!=null){
+
+                }else {
+                    Intent intent5 = new Intent(getActivity(), LoginActivity.class);
+                    startActivity(intent5);
+                }
                 break;
             case R.id.mine_setting:
+                if(user!=null){
                 Intent intent6=new Intent(getActivity(), MineSettingActivity.class);
                 startActivity(intent6);
+                }else {
+                    Intent intent5 = new Intent(getActivity(), LoginActivity.class);
+                    startActivity(intent5);
+                }
                 break;
             case R.id.mine_match:
                 Intent intent7=new Intent(getActivity(), MineContactOfficialActivity.class);

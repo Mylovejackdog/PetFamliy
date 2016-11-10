@@ -55,12 +55,12 @@ public class LoginActivity extends Activity {
                     @Override
                     public void done(User user, BmobException e) {
                         if (e==null){
-                            Toast.makeText(LoginActivity.this,"登入成功",Toast.LENGTH_SHORT).show();
+                            Toast.makeText(LoginActivity.this,"登录成功",Toast.LENGTH_SHORT).show();
                             Intent intent1=new Intent(LoginActivity.this,MainActivity.class);
                             startActivity(intent1);
                             finish();
                         }else {
-                            Toast.makeText(LoginActivity.this,"登入失败，请重新登入",Toast.LENGTH_SHORT).show();
+                            Toast.makeText(LoginActivity.this,"登录失败，请重新登录",Toast.LENGTH_SHORT).show();
                         }
                     }
                 });

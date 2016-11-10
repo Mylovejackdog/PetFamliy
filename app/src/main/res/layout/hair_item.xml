@@ -11,6 +11,7 @@
         <ImageView
             android:id="@+id/hair_iv_back"
             android:src="@mipmap/icon_introdution_button_back"
+            android:layout_margin="8dp"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             />

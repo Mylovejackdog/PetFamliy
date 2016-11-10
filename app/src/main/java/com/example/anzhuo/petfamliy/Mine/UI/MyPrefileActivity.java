@@ -9,6 +9,7 @@ import android.widget.ImageView;
 import android.widget.TextView;
 
 import com.bumptech.glide.Glide;
+import com.example.anzhuo.petfamliy.AdapterInfo.MyUser;
 import com.example.anzhuo.petfamliy.Mine.Base.User;
 import com.example.anzhuo.petfamliy.R;
 
@@ -20,10 +21,11 @@ import cn.bmob.v3.BmobUser;
  */
 
 public class MyPrefileActivity extends Activity {
-    ImageView kind_main_back,iv_head;
+    ImageView kind_main_back;
+    com.facebook.drawee.view.SimpleDraweeView iv_head;
     TextView  tv_name,tv_age,tv_number;
     Button  bt_redact;
-    User user;
+    MyUser user=BmobUser.getCurrentUser(MyUser.class);
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -31,15 +33,15 @@ public class MyPrefileActivity extends Activity {
         setContentView(R.layout.my_profile_activity);
 
         kind_main_back= (ImageView) findViewById(R.id.kind_main_back);
-        iv_head= (ImageView) findViewById(R.id.iv_head);
+        iv_head= (com.facebook.drawee.view.SimpleDraweeView) findViewById(R.id.iv_head);
         tv_age= (TextView) findViewById(R.id.tv_age);
         tv_name= (TextView) findViewById(R.id.tv_name);
         tv_number= (TextView) findViewById(R.id.tv_number);
         bt_redact= (Button) findViewById(R.id.bt_redact);
         if (user != null) {
             //     Log.i("LW",userInfo.getHead().getFileUrl()+"");
-            if(user.getHead()!=null) {
-                Glide.with(MyPrefileActivity.this).load(user.getHead().getFileUrl()).asBitmap().into(iv_head);
+            if(user.getImg_head()!=null) {
+                iv_head.setImageURI(user.getImg_head().getUrl());
             }
             else {
                 iv_head.setImageResource(R.mipmap.share_personal_default);

@@ -8,6 +8,7 @@ import android.widget.Button;
 import android.widget.ImageView;
 import android.widget.TextView;
 
+import com.example.anzhuo.petfamliy.Main.MainActivity;
 import com.example.anzhuo.petfamliy.Mine.Base.User;
 import com.example.anzhuo.petfamliy.R;
 
@@ -54,6 +55,9 @@ public class MineSettingActivity extends Activity {
             public void onClick(View v) {
 
                 User.logOut();
+                Intent intent=new Intent(MineSettingActivity.this, MainActivity.class);
+                startActivity(intent);
+                finish();
 
             }
         });

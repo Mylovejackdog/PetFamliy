@@ -20,6 +20,7 @@ import com.example.anzhuo.petfamliy.AdapterInfo.PublishInfo;
 import com.example.anzhuo.petfamliy.AdapterInfo.Recommend;
 import com.example.anzhuo.petfamliy.Community.ContributeActivity;
 import com.example.anzhuo.petfamliy.Community.ItemPhotoActivity;
+import com.example.anzhuo.petfamliy.Community.ItemRecommendActivity;
 import com.example.anzhuo.petfamliy.R;
 
 import org.json.JSONArray;
@@ -42,7 +43,6 @@ public class RecommendFragment extends Fragment implements PublishAdapter.OnItme
     RecyclerView rv_falls_photo;
     PublishAdapter publishAdapter;
     Recommend recommend;
-    SwipeRefreshLayout srl_refresh;
     List<Recommend> mlist=new ArrayList<>();
     private static final int MSG=1;
     Handler handler=new Handler(){
@@ -62,6 +62,7 @@ public class RecommendFragment extends Fragment implements PublishAdapter.OnItme
                                     recommend.setPhoto(list.get(i).getPhoto());
                                     recommend.setContent(list.get(i).getContent());
                                     recommend.setName(list.get(i).getName());
+                                    recommend.setHead(list.get(i).getHead());
                                     mlist.add(recommend);
                                     publishAdapter.notifyDataSetChanged();
                                 }
@@ -88,7 +89,6 @@ public class RecommendFragment extends Fragment implements PublishAdapter.OnItme
     public void onViewCreated(View view, @Nullable Bundle savedInstanceState) {
         super.onViewCreated(view, savedInstanceState);
         rv_falls_photo= (RecyclerView) view.findViewById(R.id.rv_falls_photo);
-        srl_refresh= (SwipeRefreshLayout) view.findViewById(R.id.srl_refresh);
         Bmob.initialize(getActivity(),"8456bf8d25dc1d6b2ba651eb5756ed67");
         ((SimpleItemAnimator)rv_falls_photo.getItemAnimator()).setSupportsChangeAnimations(false);
         new Thread(){
@@ -101,12 +101,6 @@ public class RecommendFragment extends Fragment implements PublishAdapter.OnItme
         publishAdapter=new PublishAdapter(getActivity(),mlist);
         rv_falls_photo.setLayoutManager(new StaggeredGridLayoutManager(2,StaggeredGridLayoutManager.VERTICAL));
         rv_falls_photo.setAdapter(publishAdapter);
-        srl_refresh.setOnRefreshListener(new SwipeRefreshLayout.OnRefreshListener() {
-            @Override
-            public void onRefresh() {
-                srl_refresh.setRefreshing(true);
-            }
-        });
         rv_falls_photo.setOnScrollListener(new RecyclerView.OnScrollListener() {
             @Override
             public void onScrollStateChanged(RecyclerView recyclerView, int newState) {
@@ -116,10 +110,11 @@ public class RecommendFragment extends Fragment implements PublishAdapter.OnItme
         publishAdapter.setOnClickListener(new PublishAdapter.OnItmeClickListener() {
             @Override
             public void onItemClicked(int position) {
-                Intent intent=new Intent(getActivity(), ItemPhotoActivity.class);
+                Intent intent=new Intent(getActivity(), ItemRecommendActivity.class);
                 intent.putExtra("name",mlist.get(position).getName());
                 intent.putExtra("photo",mlist.get(position).getPhoto());
                 intent.putExtra("content",mlist.get(position).getContent());
+                intent.putExtra("head",mlist.get(position).getHead());
                 startActivity(intent);
             }
         });

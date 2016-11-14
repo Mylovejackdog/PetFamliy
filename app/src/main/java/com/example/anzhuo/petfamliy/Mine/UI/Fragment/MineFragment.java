@@ -16,7 +16,7 @@ import com.example.anzhuo.petfamliy.Mine.UI.MineContactOfficialActivity;
 import com.example.anzhuo.petfamliy.Mine.UI.MineSettingActivity;
 import com.example.anzhuo.petfamliy.Mine.UI.MyHomePapeAtivity;
 import com.example.anzhuo.petfamliy.Mine.UI.MyLoveActivity;
-import com.example.anzhuo.petfamliy.Mine.UI.MyPrefileActivity;
+import com.example.anzhuo.petfamliy.Mine.UI.RedactPrefileActivity;
 import com.example.anzhuo.petfamliy.R;
 
 import cn.bmob.v3.BmobUser;
@@ -49,8 +49,6 @@ public class MineFragment extends Fragment implements View.OnClickListener {
         mine_name= (TextView) view.findViewById(R.id.mine_name);
         mine_main= (TextView) view.findViewById(R.id.mine_main);
         mine_love= (TextView) view.findViewById(R.id.mine_love);
-        mine_message= (TextView) view.findViewById(R.id.mine_message);
-        mine_circle= (TextView) view.findViewById(R.id.mine_circle);
         mine_setting= (TextView) view.findViewById(R.id.mine_setting);
         mine_match= (TextView) view.findViewById(R.id.mine_match);
 
@@ -74,8 +72,6 @@ public class MineFragment extends Fragment implements View.OnClickListener {
         iv_head.setOnClickListener(this);
         mine_main.setOnClickListener(this);
         mine_love.setOnClickListener(this);
-        mine_message.setOnClickListener(this);
-        mine_circle.setOnClickListener(this);
         mine_setting.setOnClickListener(this);
         mine_match.setOnClickListener(this);
 
@@ -89,7 +85,7 @@ public class MineFragment extends Fragment implements View.OnClickListener {
                    Intent intent = new Intent(getActivity(), LoginActivity.class);
                    startActivity(intent);
                }else {
-                   Intent intent1=new Intent(getActivity(), MyPrefileActivity.class);
+                   Intent intent1=new Intent(getActivity(), RedactPrefileActivity.class);
                    startActivity(intent1);
                }
                 break;
@@ -106,22 +102,6 @@ public class MineFragment extends Fragment implements View.OnClickListener {
                 if (user!=null){
                     Intent intent4=new Intent(getActivity(), MyLoveActivity.class);
                     startActivity(intent4);
-                }else {
-                    Intent intent5 = new Intent(getActivity(), LoginActivity.class);
-                    startActivity(intent5);
-                }
-                break;
-            case R.id.mine_message:
-                if (user!=null){
-
-                }else {
-                    Intent intent5 = new Intent(getActivity(), LoginActivity.class);
-                    startActivity(intent5);
-                }
-                break;
-            case R.id.mine_circle:
-                if (user!=null){
-
                 }else {
                     Intent intent5 = new Intent(getActivity(), LoginActivity.class);
                     startActivity(intent5);

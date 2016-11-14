@@ -1,5 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:fresco="http://schemas.android.com/apk/res-auto"
     android:orientation="vertical"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
@@ -29,11 +30,12 @@
             android:textSize="20sp" />
     </LinearLayout>
 
-    <ImageView
-        android:id="@+id/iv_head"
+    <com.facebook.drawee.view.SimpleDraweeView
+        android:id="@+id/change_head"
         android:layout_width="80dp"
         android:layout_height="80dp"
-        android:src="@mipmap/share_personal_default"
+        fresco:placeholderImage="@mipmap/share_personal_default"
+        fresco:roundAsCircle="true"
         android:layout_gravity="center_horizontal"
         android:layout_margin="30dp"
         />
@@ -58,6 +60,7 @@
             android:layout_width="0dp"
             android:layout_weight="5"
             android:background="@drawable/border"
+            android:padding="5dp"
             android:layout_marginRight="30dp"
             android:layout_height="wrap_content" />
     </LinearLayout>
@@ -71,15 +74,16 @@
             android:layout_width="0dp"
             android:layout_weight="2"
             android:layout_height="wrap_content"
-            android:text="年龄:"
+            android:text="性别:"
             android:padding="6dp"
             android:textSize="20sp"
             android:gravity="center"
             />
         <EditText
-            android:id="@+id/et_age"
+            android:id="@+id/et_sex"
             android:layout_width="0dp"
             android:layout_weight="5"
+            android:padding="5dp"
             android:layout_height="wrap_content"
             android:background="@drawable/border"
             android:layout_marginRight="30dp"
@@ -107,6 +111,7 @@
             android:id="@+id/et_number"
             android:layout_width="0dp"
             android:layout_weight="5"
+            android:padding="5dp"
             android:background="@drawable/border"
             android:layout_marginRight="30dp"
             android:layout_height="wrap_content" />
@@ -119,6 +124,7 @@
         android:layout_margin="30dp"
         android:background="@color/green"
         android:text="保存资料"
+        android:padding="5dp"
         android:textSize="20sp"
         android:textColor="@color/white"
         />

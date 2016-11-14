@@ -13,6 +13,7 @@ import android.util.Log;
 import android.view.View;
 import android.widget.Button;
 import android.widget.ImageView;
+import android.widget.TextView;
 import android.widget.Toast;
 
 import com.example.anzhuo.petfamliy.AdapterInfo.MyUser;
@@ -28,6 +29,9 @@ import cn.bmob.v3.BmobUser;
 import cn.bmob.v3.datatype.BmobFile;
 import cn.bmob.v3.exception.BmobException;
 import cn.bmob.v3.listener.UpdateListener;
+import cn.bmob.v3.listener.UploadFileListener;
+
+import static com.example.anzhuo.petfamliy.R.id.kind_main_back;
 
 /**
  * 设置头像页面
@@ -45,23 +49,23 @@ public class MyHeadActivity extends Activity implements View.OnClickListener {
     File file;//存储拍摄图片的文件
 
     ImageView kind_main_back,iv_head,iv_photo,iv_camera;
-    Button  bt_confirm;
+    TextView bt_save;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.my_head_layout);
 
-        kind_main_back= (ImageView) findViewById(R.id.kind_main_back);
+        kind_main_back= (ImageView) findViewById(R.id.iv_back);
         iv_head= (ImageView) findViewById(R.id.iv_head);
         iv_photo= (ImageView) findViewById(R.id.btn_selectimage);
         iv_camera= (ImageView) findViewById(R.id.iv_xiangji);
-        bt_confirm= (Button) findViewById(R.id.bt_save);
+        bt_save= (TextView) findViewById(R.id.bt_save);
 
         kind_main_back.setOnClickListener(this);
         iv_photo.setOnClickListener(this);
         iv_camera.setOnClickListener(this);
-        bt_confirm.setOnClickListener(this);
+        bt_save.setOnClickListener(this);
 
 
     }
@@ -69,7 +73,7 @@ public class MyHeadActivity extends Activity implements View.OnClickListener {
     @Override
     public void onClick(View v) {
         switch (v.getId()){
-            case R.id.kind_main_back:
+            case R.id.iv_back:
                 Intent intent=new Intent(MyHeadActivity.this,RedactPrefileActivity.class);
                 startActivity(intent);
                 finish();
@@ -81,7 +85,7 @@ public class MyHeadActivity extends Activity implements View.OnClickListener {
                 gototakephoto(v);
                 break;
             case R.id.bt_save:
-                uploadHead(v);
+                uploadHead();
                 break;
         }
 
@@ -155,7 +159,8 @@ public class MyHeadActivity extends Activity implements View.OnClickListener {
                         }
                         //  System.out.println("the bmp toString:"+bitmap);
                         Log.i("LW", "哈哈：" + bitmap);
-                        iv_head.setImageBitmap(bitmap);
+                        iv_head.setImageURI(uri);
+                  //      iv_head.setImageBitmap(bitmap);
                     } catch (FileNotFoundException e) {
                         e.printStackTrace();
                     }
@@ -163,23 +168,36 @@ public class MyHeadActivity extends Activity implements View.OnClickListener {
             }
         }
     }
-    public void uploadHead(View view) {
+    public void uploadHead() {
         final BmobFile bmobFile = new BmobFile(file);
-        MyUser user=new MyUser();
-        user.setImg_head(bmobFile);
-        MyUser user1= BmobUser.getCurrentUser(MyUser.class);
-
-        user.update(user1.getObjectId(), new UpdateListener() {
+        bmobFile.upload(new UploadFileListener() {
             @Override
             public void done(BmobException e) {
                 if (e==null){
-                    Toast.makeText(MyHeadActivity.this,"更改成功",Toast.LENGTH_SHORT).show();
-                    Intent intent=new Intent(MyHeadActivity.this,RedactPrefileActivity.class);
-                    startActivity(intent);
-                    finish();
+                    Log.i("lw",bmobFile+"");
+                    Log.i("lw","123456");
+                    MyUser user=new MyUser();
+                    user.setImg_head(bmobFile);
+                    MyUser user1= BmobUser.getCurrentUser(MyUser.class);
+                    user.update(user1.getObjectId(), new UpdateListener() {
+                        @Override
+                        public void done(BmobException e) {
+                            if (e==null){
+                                Log.i("lw","123");
+                                Toast.makeText(MyHeadActivity.this,"更改成功",Toast.LENGTH_SHORT).show();
+                                Intent intent=new Intent(MyHeadActivity.this,RedactPrefileActivity.class);
+                                startActivity(intent);
+                                finish();
+                            }else {
+                                Log.i("lw",e+"++++++++++++++++++++++++");
+
+                            }
+                        }
+                    });
                 }
             }
         });
+
     }
 
 }

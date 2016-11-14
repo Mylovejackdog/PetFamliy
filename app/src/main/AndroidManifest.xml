@@ -84,8 +84,6 @@
         </activity>
         <activity android:name=".Mine.UI.MyLoveActivity">
         </activity>
-        <activity android:name=".Mine.UI.MyPrefileActivity">
-        </activity>
         <activity android:name=".Mine.UI.RedactPrefileActivity">
         </activity>
         <activity android:name=".Mine.UI.UserAgreementActivity">
@@ -113,6 +111,9 @@
 
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
+        </activity>
+        <activity android:name=".Community.ItemRecommendActivity">
+
         </activity>
         <activity android:name=".Home.ShowBigPicActivity">
 

@@ -11,6 +11,7 @@ import cn.bmob.v3.datatype.BmobFile;
 public class MyUser extends BmobUser implements Serializable{
     private BmobFile img_head;
     private String nickName;
+    private String sex;
 
     public BmobFile getImg_head() {
         return img_head;
@@ -28,5 +29,11 @@ public class MyUser extends BmobUser implements Serializable{
         this.nickName = nickName;
     }
 
+    public String getSex() {
+        return sex;
+    }
 
+    public void setSex(String sex) {
+        this.sex = sex;
+    }
 }

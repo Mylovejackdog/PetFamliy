@@ -42,7 +42,7 @@ import cn.bmob.v3.listener.UpdateListener;
 
 public class MyHomePapeAtivity extends Activity {
     ImageView king_main_back;
-    SwipeRefreshLayout swipe;
+
     ListView lv_pape;
     List<Post> list;
     MyHomePostBaseAdapter myHomePostBaseAdapter;

@@ -62,7 +62,8 @@ public class AlterPwdAcivity extends Activity {
                     public void done(BmobException e) {
                         if (e==null){
                             Toast.makeText(AlterPwdAcivity.this,"修改成功"+"新密码："+new_pwd.getText().toString(),Toast.LENGTH_SHORT).show();
-                            Intent intent=new Intent(AlterPwdAcivity.this,MineSettingActivity.class);
+                            MyUser.logOut();
+                            Intent intent=new Intent(AlterPwdAcivity.this,LoginActivity.class);
                             startActivity(intent);
                             finish();
                         }
@@ -74,3 +75,4 @@ public class AlterPwdAcivity extends Activity {
 
     }
 }
+

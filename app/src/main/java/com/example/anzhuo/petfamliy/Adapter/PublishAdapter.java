@@ -13,6 +13,7 @@ import com.bumptech.glide.Glide;
 import com.example.anzhuo.petfamliy.AdapterInfo.PublishInfo;
 import com.example.anzhuo.petfamliy.AdapterInfo.Recommend;
 import com.example.anzhuo.petfamliy.R;
+import com.facebook.drawee.view.SimpleDraweeView;
 
 import java.util.List;
 
@@ -48,10 +49,10 @@ public class PublishAdapter extends RecyclerView.Adapter<RecyclerView.ViewHolder
         recommend=mList.get(position);
         Uri uri=Uri.parse(recommend.getPhoto());
         Glide.with(mContext).load(uri).placeholder(R.drawable.aop).into(((ViewHolder)holder).iv_photo);
-     //   ((ViewHolder)holder).iv_head.setImageResource(recommend.getHead());
-      //  ((ViewHolder)holder).iv_photo.setImageResource(recommend.getPhoto());
+        ((ViewHolder)holder).iv_head.setImageURI(recommend.getHead());
         ((ViewHolder)holder).tv_content.setText(recommend.getContent());
         ((ViewHolder)holder).tv_name.setText(recommend.getName());
+
     }
 
     @Override
@@ -65,7 +66,7 @@ public class PublishAdapter extends RecyclerView.Adapter<RecyclerView.ViewHolder
     }
 
     public class ViewHolder extends RecyclerView.ViewHolder implements View.OnClickListener {
-        ImageView iv_head;
+        com.facebook.drawee.view.SimpleDraweeView iv_head;
         TextView tv_name;
         ImageView iv_photo;
         TextView tv_content;
@@ -74,7 +75,7 @@ public class PublishAdapter extends RecyclerView.Adapter<RecyclerView.ViewHolder
         public ViewHolder(View itemView, final int viewType) {
             super(itemView);
             this.position = viewType;
-            iv_head = (ImageView) itemView.findViewById(R.id.iv_head);
+            iv_head = (SimpleDraweeView) itemView.findViewById(R.id.iv_head);
             tv_name = (TextView) itemView.findViewById(R.id.tv_name);
             iv_photo = (ImageView) itemView.findViewById(R.id.iv_photo);
             tv_content = (TextView) itemView.findViewById(R.id.tv_content);

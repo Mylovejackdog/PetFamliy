@@ -15,7 +15,9 @@ import android.widget.TextView;
 import android.widget.Toast;
 
 import com.example.anzhuo.petfamliy.AdapterInfo.MyUser;
+
 import com.example.anzhuo.petfamliy.R;
+import com.facebook.drawee.view.SimpleDraweeView;
 
 import java.io.File;
 import java.io.FileNotFoundException;
@@ -27,6 +29,9 @@ import cn.bmob.v3.exception.BmobException;
 import cn.bmob.v3.listener.SaveListener;
 import cn.bmob.v3.listener.UploadFileListener;
 
+import static com.example.anzhuo.petfamliy.R.id.et_name;
+import static com.example.anzhuo.petfamliy.R.id.new_user_register;
+
 /**
  * 注册页面
  * Created by anzhuo on 2016/11/3.
@@ -37,8 +42,8 @@ public class RegisterActivity extends Activity implements View.OnClickListener{
     Bitmap bitmap;
     Uri uri;
     File file;//存储拍摄图片的文件
-
-    ImageView kind_main_back,iv_head,iv_write;
+    com.facebook.drawee.view.SimpleDraweeView iv_head;
+    ImageView kind_main_back,iv_write;
     EditText  et_user,et_pwd,et_email,confirm_password,et_name;
     TextView  mine_protocol,mine_register;
 
@@ -47,7 +52,7 @@ public class RegisterActivity extends Activity implements View.OnClickListener{
         super.onCreate(savedInstanceState);
         setContentView(R.layout.register_layout);
         kind_main_back= (ImageView) findViewById(R.id.kind_main_back);
-        iv_head= (ImageView) findViewById(R.id.iv_head);
+        iv_head= (SimpleDraweeView) findViewById(R.id.iv_head);
         et_user= (EditText) findViewById(R.id.et_user);
         et_pwd= (EditText) findViewById(R.id.et_pwd);
         et_email= (EditText) findViewById(R.id.et_email);
@@ -135,7 +140,8 @@ public class RegisterActivity extends Activity implements View.OnClickListener{
                         }
                         //  System.out.println("the bmp toString:"+bitmap);
                         Log.i("LW", "哈哈：" + bitmap);
-                        iv_head.setImageBitmap(bitmap);
+
+                        iv_head.setImageURI(uri);
                     } catch (FileNotFoundException e) {
                         e.printStackTrace();
                     }

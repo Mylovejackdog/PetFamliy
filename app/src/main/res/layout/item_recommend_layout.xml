@@ -3,15 +3,12 @@
     xmlns:fresco="http://schemas.android.com/apk/res-auto"
     android:orientation="vertical"
     android:layout_width="match_parent"
-    android:layout_height="wrap_content"
-    android:layout_marginTop="2dp"
-    android:layout_marginRight="2dp"
-    android:layout_marginLeft="2dp">
+    android:layout_height="match_parent">
     <RelativeLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content">
         <com.facebook.drawee.view.SimpleDraweeView
-            android:id="@+id/iv_head"
+            android:id="@+id/recommend_head"
             android:layout_width="60dp"
             android:layout_height="60dp"
             fresco:roundAsCircle="true"
@@ -19,28 +16,36 @@
             android:layout_marginLeft="5dp"
             fresco:placeholderImage="@drawable/common_icon_check"/>
         <TextView
-            android:id="@+id/tv_name"
+            android:id="@+id/recommend_name"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_toRightOf="@+id/iv_head"
+            android:layout_toRightOf="@+id/recommend_head"
             android:layout_marginTop="10dp"
             android:layout_marginLeft="5dp"
             android:text="小明"/>
         <ImageView
-            android:id="@+id/iv_photo"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
+            android:id="@+id/recommend_photo"
+            android:layout_width="400dp"
+            android:layout_height="350dp"
             android:src="@drawable/icon_logo"
-            android:scaleType="fitXY"
             android:adjustViewBounds="true"
-            android:layout_below="@+id/iv_head"/>
+            android:layout_marginLeft="5dp"
+            android:layout_below="@+id/recommend_head"/>
         <TextView
-            android:id="@+id/tv_content"
+            android:id="@+id/recommend_content"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:layout_below="@+id/iv_photo"
+            android:layout_below="@+id/recommend_photo"
             android:layout_marginLeft="5dp"
-            android:layout_marginTop="5dp"
+            android:layout_marginTop="3dp"
             android:text="这是一只狗"/>
+
     </RelativeLayout>
+    <ImageView
+        android:id="@+id/recommend_collect"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="right"
+        android:layout_marginRight="10dp"
+        android:src="@drawable/collect"/>
 </LinearLayout>

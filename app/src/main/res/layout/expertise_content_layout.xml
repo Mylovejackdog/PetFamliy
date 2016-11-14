@@ -56,8 +56,9 @@
         android:layout_margin="5dp"
         android:padding="10dp"
         android:layout_gravity="center"
-       android:layout_width="300dp"
-       android:layout_height="175dp" />
+       android:layout_width="match_parent"
+        android:scaleType="fitXY"
+       android:layout_height="240dp" />
     <TextView
         android:id="@+id/expertise_main"
         android:layout_margin="5dp"

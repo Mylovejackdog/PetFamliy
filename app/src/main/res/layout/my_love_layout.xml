@@ -23,11 +23,14 @@
             android:layout_height="wrap_content"
             android:gravity="center"
             android:layout_gravity="center"
-            android:text="我喜欢的"
+            android:text="我的评论"
             android:layout_marginRight="30dp"
             android:textColor="@color/white"
             android:textSize="20sp" />
     </LinearLayout>
-
+<ListView
+    android:id="@+id/lv_mylove"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"></ListView>
 
 </LinearLayout>

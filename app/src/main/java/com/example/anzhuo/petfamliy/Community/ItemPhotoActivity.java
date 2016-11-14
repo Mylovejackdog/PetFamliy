@@ -96,25 +96,6 @@ public class ItemPhotoActivity extends Activity {
 
     }
 
-//    protected void updateComment(){
-//        BmobQuery<Comment> query = new BmobQuery<>();
-//        query.order("-createdAt");
-//        Post post = new Post();
-//        post.setObjectId(postId);
-//        query.addWhereEqualTo("post", new BmobPointer(post));
-//        query.include("user,post.author");
-//        query.findObjects(new FindListener<Comment>() {
-//            @Override
-//            public void done(List<Comment> mlist, BmobException e) {
-//                if (e == null) {
-//                    list.clear();
-//                    list.addAll(mlist);
-//                    tv_comment.setText(mlist.size()+"");
-//                    comment_count.setText("评论"+mlist.size()+"条");
-//                    commentListAdapter.notifyDataSetChanged();
-//                }
-//            }
-//        });
-//    }
+
 
 }

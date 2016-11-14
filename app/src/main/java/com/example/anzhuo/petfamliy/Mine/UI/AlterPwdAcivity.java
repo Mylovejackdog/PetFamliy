@@ -10,7 +10,6 @@ import android.widget.ImageView;
 import android.widget.Toast;
 
 import com.example.anzhuo.petfamliy.AdapterInfo.MyUser;
-import com.example.anzhuo.petfamliy.Mine.Base.User;
 import com.example.anzhuo.petfamliy.R;
 
 import cn.bmob.v3.BmobUser;
@@ -58,7 +57,7 @@ public class AlterPwdAcivity extends Activity {
         bt_keep.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                User.updateCurrentUserPassword(old_pwd.getText().toString(), new_pwd.getText().toString(), new UpdateListener() {
+                MyUser.updateCurrentUserPassword(old_pwd.getText().toString(), new_pwd.getText().toString(), new UpdateListener() {
                     @Override
                     public void done(BmobException e) {
                         if (e==null){

@@ -41,7 +41,7 @@
     <TextView
         android:id="@+id/mine_name"
         android:text="请登录"
-        android:layout_marginLeft="18dp"
+        android:layout_marginLeft="10dp"
         android:textSize="16sp"
         android:layout_gravity="center"
         android:layout_width="wrap_content"
@@ -80,7 +80,7 @@
             android:layout_marginLeft="16dp"
             android:drawableLeft="@mipmap/icon_message_demand"
             android:drawablePadding="10dp"
-            android:text="我喜欢的"
+            android:text="我的评论"
             android:drawableRight="@drawable/lsq_style_default_arrow_more_right"
             android:gravity="center_vertical"
             android:layout_width="0dp"

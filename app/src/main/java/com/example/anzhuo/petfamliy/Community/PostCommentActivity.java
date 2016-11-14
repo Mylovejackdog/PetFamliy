@@ -10,10 +10,12 @@ import android.os.Message;
 import android.text.TextUtils;
 import android.util.Log;
 import android.view.View;
+import android.widget.AbsListView;
 import android.widget.AdapterView;
 import android.widget.EditText;
 import android.widget.ImageView;
 import android.widget.ListView;
+import android.widget.RelativeLayout;
 import android.widget.TextView;
 import android.widget.Toast;
 
@@ -22,6 +24,7 @@ import com.example.anzhuo.petfamliy.Adapter.CommentBaseAdapter;
 import com.example.anzhuo.petfamliy.AdapterInfo.Comment;
 import com.example.anzhuo.petfamliy.AdapterInfo.MyUser;
 import com.example.anzhuo.petfamliy.AdapterInfo.Post;
+import com.example.anzhuo.petfamliy.Fresh.ListViewForScrollView;
 import com.example.anzhuo.petfamliy.Mine.UI.MyHomePapeAtivity;
 import com.example.anzhuo.petfamliy.R;
 import com.facebook.drawee.view.SimpleDraweeView;
@@ -41,7 +44,7 @@ import cn.bmob.v3.listener.UpdateListener;
 /**
  * Created by anzhuo on 2016/11/9.
  */
-public class PostCommentActivity extends Activity {
+public class PostCommentActivity extends Activity{
     com.facebook.drawee.view.SimpleDraweeView iv_myHead;
     TextView tv_myName;
     ImageView iv_myPhoto;
@@ -55,7 +58,8 @@ public class PostCommentActivity extends Activity {
     CommentBaseAdapter commentBaseAdapter;
     Post data;
     String postid;
-
+    int firstItem;
+    RelativeLayout rl_content;
 
     Handler handler = new Handler() {
         @Override
@@ -101,7 +105,7 @@ public class PostCommentActivity extends Activity {
         lv_content = (ListView) findViewById(R.id.lv_content);
         bt_send = (TextView) findViewById(R.id.bt_send);
         et_writing = (EditText) findViewById(R.id.et_writing);
-
+        rl_content= (RelativeLayout) findViewById(R.id.rl_content);
 
         list = new ArrayList<>();
         commentBaseAdapter = new CommentBaseAdapter(this, list);
@@ -112,7 +116,7 @@ public class PostCommentActivity extends Activity {
         tv_myName.setText(data.getAuthor().getNickName());
         Glide.with(PostCommentActivity.this).load(data.getImage().getUrl()).into(iv_myPhoto);
         tv_myFrom.setText(data.getContent());
-
+        lv_content.setVerticalScrollBarEnabled(false);
         bt_send.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
@@ -135,9 +139,10 @@ public class PostCommentActivity extends Activity {
                     @Override
                     public void onClick(DialogInterface dialogInterface,  int which) {
                         dialogInterface.dismiss();
+                        Comment comment = new Comment();
+                        comment.setObjectId(list.get(i).getObjectId());
                         if (bmobUser.getObjectId().equals(list.get(i).getUser().getObjectId())) {
-                            Comment comment = new Comment();
-                            comment.setObjectId(list.get(i).getObjectId());
+
                             comment.delete(new UpdateListener() {
                                 @Override
                                 public void done(BmobException e) {
@@ -170,6 +175,8 @@ public class PostCommentActivity extends Activity {
         });
 
 
+
+
     }
 
     protected void updateComment() {
@@ -190,7 +197,6 @@ public class PostCommentActivity extends Activity {
             }
         });
     }
-
 
 
 }

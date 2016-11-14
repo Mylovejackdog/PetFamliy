@@ -7,10 +7,13 @@ import android.net.ConnectivityManager;
 import android.net.NetworkInfo;
 import android.os.Bundle;
 import android.os.Handler;
+import android.os.SystemClock;
 import android.widget.Toast;
 
 import com.example.anzhuo.petfamliy.R;
 
+import java.util.Timer;
+import java.util.TimerTask;
 
 
 /**
@@ -31,9 +34,20 @@ public class FirstActivity extends Activity {
                 startActivity(intent);
                 finish();
             }
-        },5000);
+        },3000);
         }else {
-            Toast.makeText(this, "网络异常", Toast.LENGTH_SHORT).show();
+            Toast.makeText(this, "网络异常", Toast.LENGTH_LONG).show();
+            TimerTask timerTask=new TimerTask() {
+                @Override
+                public void run() {
+                    onDestroy();
+                }
+            };
+            Timer timer=new Timer();
+            timer.schedule(timerTask,3000);
+
+
+
         }
 
     }
@@ -47,4 +61,10 @@ public class FirstActivity extends Activity {
             return true;
         return false;
     }
+
+    public void onDestroy() {
+        finish();
+        super.onDestroy();
+    }
+
 }

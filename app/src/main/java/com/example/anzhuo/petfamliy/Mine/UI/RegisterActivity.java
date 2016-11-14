@@ -14,7 +14,7 @@ import android.widget.ImageView;
 import android.widget.TextView;
 import android.widget.Toast;
 
-import com.example.anzhuo.petfamliy.Mine.Base.User;
+import com.example.anzhuo.petfamliy.AdapterInfo.MyUser;
 import com.example.anzhuo.petfamliy.R;
 
 import java.io.File;
@@ -26,9 +26,6 @@ import cn.bmob.v3.datatype.BmobFile;
 import cn.bmob.v3.exception.BmobException;
 import cn.bmob.v3.listener.SaveListener;
 import cn.bmob.v3.listener.UploadFileListener;
-
-import static com.example.anzhuo.petfamliy.R.id.et_name;
-import static com.example.anzhuo.petfamliy.R.id.new_user_register;
 
 /**
  * 注册页面
@@ -155,15 +152,15 @@ public class RegisterActivity extends Activity implements View.OnClickListener{
             public void done(BmobException e) {
                 if (e==null){
                     Log.i("lw","12");
-                    User userInfo = new User();
+                    MyUser userInfo = new MyUser();
                     userInfo.setUsername(et_user.getText().toString());
                     userInfo.setPassword(et_pwd.getText().toString());
                     userInfo.setEmail(et_email.getText().toString());
-                    userInfo.setNickname(et_name.getText().toString());
+                    userInfo.setNickName(et_name.getText().toString());
                     userInfo.setImg_head(bmobFile);
-                    userInfo.signUp(new SaveListener<User>() {
+                    userInfo.signUp(new SaveListener<MyUser>() {
                         @Override
-                        public void done(User userInfo, BmobException e) {
+                        public void done(MyUser userInfo, BmobException e) {
                             if (e==null){
                                 Log.i("lw", "12345");
                                 Toast.makeText(RegisterActivity.this,"注册成功："+"账号："+et_user.getText().toString(),Toast.LENGTH_SHORT).show();

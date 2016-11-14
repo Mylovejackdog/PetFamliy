@@ -17,6 +17,7 @@ import android.widget.ListView;
 import android.widget.Toast;
 
 import com.example.anzhuo.petfamliy.Adapter.MyHomePostBaseAdapter;
+import com.example.anzhuo.petfamliy.AdapterInfo.Comment;
 import com.example.anzhuo.petfamliy.AdapterInfo.MyUser;
 import com.example.anzhuo.petfamliy.AdapterInfo.Post;
 import com.example.anzhuo.petfamliy.Community.PostCommentActivity;
@@ -24,6 +25,7 @@ import com.example.anzhuo.petfamliy.R;
 
 import java.util.ArrayList;
 import java.util.List;
+import java.util.Queue;
 
 import cn.bmob.v3.BmobQuery;
 import cn.bmob.v3.BmobUser;
@@ -75,7 +77,6 @@ public class MyHomePapeAtivity extends Activity {
         setContentView(R.layout.my_home_pape_activity);
 
         king_main_back = (ImageView) findViewById(R.id.kind_main_back);
-        swipe = (SwipeRefreshLayout) findViewById(R.id.swipe);
         lv_pape = (ListView) findViewById(R.id.lv_pape);
         list = new ArrayList<>();
         myHomePostBaseAdapter = new MyHomePostBaseAdapter(this, list);
@@ -122,6 +123,27 @@ public class MyHomePapeAtivity extends Activity {
                                  }
                              }
                          });
+                       BmobQuery<Comment> query=new BmobQuery<Comment>();
+                        query.include("post");
+                        query.addWhereEqualTo("post",new BmobPointer(post));
+                        query.findObjects(new FindListener<Comment>() {
+                            @Override
+                            public void done(List<Comment> alist, BmobException e) {
+                                Comment comment=new Comment();
+                               for (Comment comment1:alist ){
+                                   comment.setObjectId(comment1.getObjectId());
+                                   comment.delete(new UpdateListener() {
+                                       @Override
+                                       public void done(BmobException e) {
+                                           if(e==null){
+                                               Log.i("comment","删除相关评论成功");
+                                           }
+                                       }
+                                   });
+                               }
+                            }
+                        });
+
 
                     }
                 });

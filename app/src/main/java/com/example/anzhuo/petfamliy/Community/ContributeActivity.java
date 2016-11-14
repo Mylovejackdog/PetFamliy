@@ -57,6 +57,8 @@ public class ContributeActivity extends Activity implements ChooseAdapter.OnItme
     String path;
     List<PhotoEntry> list;
     Post contributeInfo;
+    ImageView choose_photo;
+
     MyUser user= BmobUser.getCurrentUser(MyUser.class);
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -66,13 +68,21 @@ public class ContributeActivity extends Activity implements ChooseAdapter.OnItme
         tv_publish= (TextView) findViewById(R.id.tv_publish);
         et_content= (EditText) findViewById(R.id.et_content);
         rv_photo= (RecyclerView) findViewById(R.id.rv_photo);
-        Bmob.initialize(this,"8456bf8d25dc1d6b2ba651eb5756ed67");
+        choose_photo= (ImageView) findViewById(R.id.choose_photo);
+        et_content.setSelection(et_content.getText().toString().length());
         EventBus.getDefault().register(this);
         list=new ArrayList<>();
         mAdapter=new ChooseAdapter(this,list);
         rv_photo.setLayoutManager(new GridLayoutManager(this,3));
         rv_photo.setAdapter(mAdapter);
         rv_photo.addItemDecoration(new GridSpacingItemDecoration(3,4,true));
+        choose_photo.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                startActivity(new Intent(ContributeActivity.this, SdcardPhotoActivity.class));
+                EventBus.getDefault().postSticky(new EventEntry(mAdapter.getData(),EventEntry.SELECTED_PHOTOS_ID));
+            }
+        });
         iv_return.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
@@ -109,6 +119,7 @@ public class ContributeActivity extends Activity implements ChooseAdapter.OnItme
                                                 @Override
                                                 public void done(String s, BmobException e) {
                                                     if (e==null){
+                                                        Toast.makeText(ContributeActivity.this, "发表成功", Toast.LENGTH_SHORT).show();
                                                      finish();
 
                                                     }else {

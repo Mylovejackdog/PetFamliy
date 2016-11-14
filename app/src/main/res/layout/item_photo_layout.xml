@@ -4,7 +4,10 @@
     android:orientation="vertical"
     android:layout_width="match_parent"
     android:layout_height="match_parent">
+
+
     <RelativeLayout
+        android:id="@+id/rl_content"
         android:layout_width="match_parent"
         android:layout_height="wrap_content">
         <com.facebook.drawee.view.SimpleDraweeView
@@ -24,30 +27,36 @@
             android:layout_marginTop="16dp"
             android:textColor="@color/black"
             android:text="小明"/>
+
         <ImageView
             android:id="@+id/iv_myPhotos"
-            android:layout_width="match_parent"
+            android:layout_width="250dp"
             android:layout_height="200dp"
             android:src="@drawable/icon_logo"
-            android:layout_margin="16dp"
-            android:layout_below="@+id/tv_myFrom"/>
+            android:layout_marginTop="10dp"
+            android:scaleType="fitXY"
+            android:layout_below="@+id/iv_myHead"
+            android:layout_alignLeft="@+id/tv_myFrom"
+            />
         <TextView
             android:id="@+id/tv_myFrom"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:layout_below="@+id/iv_myHead"
-            android:layout_margin="8dp"
+            android:layout_below="@+id/tv_myName"
+            android:layout_alignLeft="@+id/tv_myName"
+            android:layout_marginTop="8dp"
             android:textColor="@color/black"
             android:textSize="16dp"
             android:text="这是一只狗"/>
     </RelativeLayout>
     <ListView
         android:id="@+id/lv_content"
-        android:layout_marginTop="15dp"
+        android:layout_margin="16dp"
         android:layout_width="match_parent"
         android:layout_weight="1"
         android:layout_height="0dp">
     </ListView>
+
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
@@ -64,6 +73,7 @@
             android:layout_marginRight="5dp"
             android:layout_gravity="center"
             android:hint="请发表评论......"
+            android:paddingLeft="5dp"
             android:cursorVisible="true"
             android:background="#ffffff"/>
 
@@ -77,4 +87,6 @@
             android:text="发表"
            />
     </LinearLayout>
+
+
 </LinearLayout>

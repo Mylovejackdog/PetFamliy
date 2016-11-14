@@ -81,13 +81,11 @@ public class ChooseAdapter extends RecyclerView.Adapter<ChooseAdapter.ViewHolder
     @Override
     public void onBindViewHolder(ViewHolder holder, int position) {
         if (position == list.size() - 1) {
-            holder.mImageView.setImageResource(R.drawable.add);
         } else {
             final PhotoEntry entry = list.get(position);
             Glide.with(mContext)
-                    .load(new File(entry.getPath()))
+                    .load(entry.getPath())
                     .centerCrop()
-                    .placeholder(com.litao.android.lib.R.mipmap.default_image)
                     .into(holder.mImageView);
         }
     }

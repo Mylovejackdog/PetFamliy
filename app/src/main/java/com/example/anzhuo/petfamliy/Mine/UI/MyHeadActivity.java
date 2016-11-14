@@ -2,7 +2,6 @@ package com.example.anzhuo.petfamliy.Mine.UI;
 
 import android.app.Activity;
 import android.content.ContentResolver;
-import android.content.DialogInterface;
 import android.content.Intent;
 import android.graphics.Bitmap;
 import android.graphics.BitmapFactory;
@@ -16,7 +15,7 @@ import android.widget.Button;
 import android.widget.ImageView;
 import android.widget.Toast;
 
-import com.example.anzhuo.petfamliy.Mine.Base.User;
+import com.example.anzhuo.petfamliy.AdapterInfo.MyUser;
 import com.example.anzhuo.petfamliy.Mine.Base.ZipImage;
 import com.example.anzhuo.petfamliy.R;
 
@@ -166,9 +165,9 @@ public class MyHeadActivity extends Activity implements View.OnClickListener {
     }
     public void uploadHead(View view) {
         final BmobFile bmobFile = new BmobFile(file);
-        User user=new User();
+        MyUser user=new MyUser();
         user.setImg_head(bmobFile);
-        User user1= BmobUser.getCurrentUser(User.class);
+        MyUser user1= BmobUser.getCurrentUser(MyUser.class);
 
         user.update(user1.getObjectId(), new UpdateListener() {
             @Override

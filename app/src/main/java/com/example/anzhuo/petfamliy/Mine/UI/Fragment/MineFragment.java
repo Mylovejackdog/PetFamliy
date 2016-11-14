@@ -1,20 +1,16 @@
 package com.example.anzhuo.petfamliy.Mine.UI.Fragment;
 
 
-import android.content.DialogInterface;
 import android.content.Intent;
 import android.os.Bundle;
 import android.support.v4.app.Fragment;
-import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
-import android.widget.ImageView;
 import android.widget.LinearLayout;
 import android.widget.TextView;
 
-import com.bumptech.glide.Glide;
-import com.example.anzhuo.petfamliy.Mine.Base.User;
+import com.example.anzhuo.petfamliy.AdapterInfo.MyUser;
 import com.example.anzhuo.petfamliy.Mine.UI.LoginActivity;
 import com.example.anzhuo.petfamliy.Mine.UI.MineContactOfficialActivity;
 import com.example.anzhuo.petfamliy.Mine.UI.MineSettingActivity;
@@ -34,7 +30,7 @@ public class MineFragment extends Fragment implements View.OnClickListener {
     LinearLayout ll_login;
     com.facebook.drawee.view.SimpleDraweeView  iv_head;
     TextView     mine_name,mine_main,mine_love,mine_message,mine_circle,mine_setting,mine_match;
-    User user;
+    MyUser user;
 
 
 
@@ -58,7 +54,7 @@ public class MineFragment extends Fragment implements View.OnClickListener {
         mine_setting= (TextView) view.findViewById(R.id.mine_setting);
         mine_match= (TextView) view.findViewById(R.id.mine_match);
 
-        user= BmobUser.getCurrentUser(User.class);
+        user= BmobUser.getCurrentUser(MyUser.class);
         if (user != null) {
             //     Log.i("LW",userInfo.getHead().getFileUrl()+"");
             if(user.getImg_head()!=null) {
@@ -67,7 +63,7 @@ public class MineFragment extends Fragment implements View.OnClickListener {
             else {
                 iv_head.setImageResource(R.mipmap.share_personal_default);
             }
-            String name = (String) BmobUser.getObjectByKey("nickname");
+            String name = (String) BmobUser.getObjectByKey("nickName");
             mine_name.setText(name);
         } else {
             mine_name.setText("游客");
@@ -90,7 +86,6 @@ public class MineFragment extends Fragment implements View.OnClickListener {
         switch (v.getId()){
             case R.id.iv_head:
                if (user==null) {
-                   Log.i("heheh","dksllfhdklshflkdshlkdsf");
                    Intent intent = new Intent(getActivity(), LoginActivity.class);
                    startActivity(intent);
                }else {

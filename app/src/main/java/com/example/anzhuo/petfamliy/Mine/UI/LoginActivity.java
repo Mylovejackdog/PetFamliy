@@ -9,11 +9,10 @@ import android.widget.ImageView;
 import android.widget.TextView;
 import android.widget.Toast;
 
+import com.example.anzhuo.petfamliy.AdapterInfo.MyUser;
 import com.example.anzhuo.petfamliy.Main.MainActivity;
-import com.example.anzhuo.petfamliy.Mine.Base.User;
 import com.example.anzhuo.petfamliy.R;
 
-import cn.bmob.v3.Bmob;
 import cn.bmob.v3.exception.BmobException;
 import cn.bmob.v3.listener.SaveListener;
 
@@ -48,12 +47,12 @@ public class LoginActivity extends Activity {
         mine_login.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                User user=new User();
+                MyUser user=new MyUser();
                 user.setUsername(et_user.getText().toString());
                 user.setPassword(et_pwd.getText().toString());
-                user.login(new SaveListener<User>() {
+                user.login(new SaveListener<MyUser>() {
                     @Override
-                    public void done(User user, BmobException e) {
+                    public void done(MyUser user, BmobException e) {
                         if (e==null){
                             Toast.makeText(LoginActivity.this,"登录成功",Toast.LENGTH_SHORT).show();
                             Intent intent1=new Intent(LoginActivity.this,MainActivity.class);

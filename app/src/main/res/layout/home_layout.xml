@@ -14,7 +14,7 @@
         android:text="首页"
         android:layout_marginTop="5dp"
         android:layout_marginBottom="5dp"
-        android:textSize="25sp"
+        android:textSize="20sp"
         android:textColor="@color/white"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content" />
@@ -101,16 +101,19 @@
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
+        android:padding="8dp"
         android:orientation="horizontal"
         >
         <LinearLayout
             android:layout_weight="1"
             android:layout_width="0dp"
             android:orientation="vertical"
+            android:layout_margin="8dp"
             android:layout_height="wrap_content">
             <ImageView
                 android:id="@+id/kind_img_one"
                 android:src="@drawable/image1"
+                android:scaleType="fitXY"
                 android:layout_width="match_parent"
                 android:layout_height="100dp" />
             <TextView
@@ -129,10 +132,12 @@
             android:layout_weight="1"
             android:layout_width="0dp"
             android:orientation="vertical"
+            android:layout_margin="8dp"
             android:layout_height="wrap_content">
             <ImageView
                 android:id="@+id/kind_img_two"
                 android:src="@drawable/image1"
+                android:scaleType="fitXY"
                 android:layout_width="match_parent"
                 android:layout_height="100dp" />
             <TextView
@@ -150,11 +155,13 @@
         <LinearLayout
             android:layout_weight="1"
             android:layout_width="0dp"
+            android:layout_margin="8dp"
             android:orientation="vertical"
             android:layout_height="wrap_content">
             <ImageView
                 android:id="@+id/kind_img_three"
                 android:src="@drawable/image1"
+                android:scaleType="fitXY"
                 android:layout_width="match_parent"
                 android:layout_height="100dp" />
             <TextView
@@ -181,10 +188,12 @@
             android:layout_weight="1"
             android:layout_width="0dp"
             android:orientation="vertical"
+            android:layout_margin="8dp"
             android:layout_height="wrap_content">
             <ImageView
                 android:id="@+id/kind_img_four"
                 android:src="@drawable/image1"
+                android:scaleType="fitXY"
                 android:layout_width="match_parent"
                 android:layout_height="100dp" />
             <TextView
@@ -203,10 +212,12 @@
             android:layout_weight="1"
             android:layout_width="0dp"
             android:orientation="vertical"
+            android:layout_margin="8dp"
             android:layout_height="wrap_content">
             <ImageView
                 android:id="@+id/kind_img_five"
                 android:src="@drawable/image1"
+                android:scaleType="fitXY"
                 android:layout_width="match_parent"
                 android:layout_height="100dp" />
             <TextView
@@ -225,10 +236,12 @@
             android:layout_weight="1"
             android:layout_width="0dp"
             android:orientation="vertical"
+            android:layout_margin="8dp"
             android:layout_height="wrap_content">
             <ImageView
                 android:id="@+id/kind_img_six"
                 android:src="@drawable/image1"
+                android:scaleType="fitXY"
                 android:layout_width="match_parent"
                 android:layout_height="100dp" />
             <TextView
@@ -290,10 +303,12 @@
                 android:layout_width="0dp"
                 android:padding="4dp"
                 android:orientation="vertical"
+                android:layout_margin="8dp"
                 android:layout_height="wrap_content">
                 <ImageView
                     android:id="@+id/encyclopedia_img_one"
                     android:src="@drawable/image1"
+                    android:scaleType="fitXY"
                     android:layout_width="match_parent"
                     android:layout_height="100dp" />
                 <TextView
@@ -313,10 +328,12 @@
                 android:layout_width="0dp"
                 android:padding="4dp"
                 android:orientation="vertical"
+                android:layout_margin="8dp"
                 android:layout_height="wrap_content">
                 <ImageView
                     android:id="@+id/encyclopedia_img_two"
                     android:src="@drawable/image1"
+                    android:scaleType="fitXY"
                     android:layout_width="match_parent"
                     android:layout_height="100dp" />
                 <TextView
@@ -343,11 +360,13 @@
                 android:layout_weight="1"
                 android:layout_width="0dp"
                 android:padding="4dp"
+                android:layout_margin="8dp"
                 android:orientation="vertical"
                 android:layout_height="wrap_content">
                 <ImageView
                     android:id="@+id/encyclopedia_img_three"
                     android:src="@drawable/image1"
+                    android:scaleType="fitXY"
                     android:layout_width="match_parent"
                     android:layout_height="100dp" />
                 <TextView
@@ -366,11 +385,13 @@
                 android:layout_weight="1"
                 android:layout_width="0dp"
                 android:padding="4dp"
+                android:layout_margin="8dp"
                 android:orientation="vertical"
                 android:layout_height="wrap_content">
                 <ImageView
                     android:id="@+id/encyclopedia_img_four"
                     android:src="@drawable/image1"
+                    android:scaleType="fitXY"
                     android:layout_width="match_parent"
                     android:layout_height="100dp" />
                 <TextView
@@ -432,11 +453,13 @@
                 android:layout_weight="1"
                 android:layout_width="0dp"
                 android:padding="4dp"
+                android:layout_margin="8dp"
                 android:orientation="vertical"
                 android:layout_height="wrap_content">
                 <ImageView
                     android:id="@+id/experience_img_one"
                     android:src="@drawable/image1"
+                    android:scaleType="fitXY"
                     android:layout_width="match_parent"
                     android:layout_height="100dp" />
                 <TextView
@@ -455,11 +478,13 @@
                 android:layout_weight="1"
                 android:layout_width="0dp"
                 android:padding="4dp"
+                android:layout_margin="8dp"
                 android:orientation="vertical"
                 android:layout_height="wrap_content">
                 <ImageView
                     android:id="@+id/experience_img_two"
                     android:src="@drawable/image1"
+                    android:scaleType="fitXY"
                     android:layout_width="match_parent"
                     android:layout_height="100dp" />
                 <TextView
@@ -486,11 +511,13 @@
                 android:layout_weight="1"
                 android:layout_width="0dp"
                 android:padding="4dp"
+                android:layout_margin="8dp"
                 android:orientation="vertical"
                 android:layout_height="wrap_content">
                 <ImageView
                     android:id="@+id/experience_img_three"
                     android:src="@drawable/image1"
+                    android:scaleType="fitXY"
                     android:layout_width="match_parent"
                     android:layout_height="100dp" />
                 <TextView
@@ -509,11 +536,13 @@
                 android:layout_weight="1"
                 android:layout_width="0dp"
                 android:padding="4dp"
+                android:layout_margin="8dp"
                 android:orientation="vertical"
                 android:layout_height="wrap_content">
                 <ImageView
                     android:id="@+id/experience_img_four"
                     android:src="@drawable/image1"
+                    android:scaleType="fitXY"
                     android:layout_width="match_parent"
                     android:layout_height="100dp" />
                 <TextView
@@ -576,11 +605,13 @@
                 android:layout_weight="1"
                 android:layout_width="0dp"
                 android:padding="4dp"
+                android:layout_margin="8dp"
                 android:orientation="vertical"
                 android:layout_height="wrap_content">
                 <ImageView
                     android:id="@+id/disease_img_one"
                     android:src="@drawable/image1"
+                    android:scaleType="fitXY"
                     android:layout_width="match_parent"
                     android:layout_height="100dp" />
                 <TextView
@@ -599,11 +630,13 @@
                 android:layout_weight="1"
                 android:layout_width="0dp"
                 android:padding="4dp"
+                android:layout_margin="8dp"
                 android:orientation="vertical"
                 android:layout_height="wrap_content">
                 <ImageView
                     android:id="@+id/disease_img_two"
                     android:src="@drawable/image1"
+                    android:scaleType="fitXY"
                     android:layout_width="match_parent"
                     android:layout_height="100dp" />
                 <TextView
@@ -631,10 +664,12 @@
                 android:layout_width="0dp"
                 android:orientation="vertical"
                 android:padding="4dp"
+                android:layout_margin="8dp"
                 android:layout_height="wrap_content">
                 <ImageView
                     android:id="@+id/disease_img_three"
                     android:src="@drawable/image1"
+                    android:scaleType="fitXY"
                     android:layout_width="match_parent"
                     android:layout_height="100dp" />
                 <TextView
@@ -654,10 +689,12 @@
                 android:layout_width="0dp"
                 android:orientation="vertical"
                 android:padding="4dp"
+                android:layout_margin="8dp"
                 android:layout_height="wrap_content">
                 <ImageView
                     android:id="@+id/disease_img_four"
                     android:src="@drawable/image1"
+                    android:scaleType="fitXY"
                     android:layout_width="match_parent"
                     android:layout_height="100dp" />
                 <TextView

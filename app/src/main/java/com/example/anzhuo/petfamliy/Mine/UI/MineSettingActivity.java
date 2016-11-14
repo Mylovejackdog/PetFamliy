@@ -8,11 +8,9 @@ import android.widget.Button;
 import android.widget.ImageView;
 import android.widget.TextView;
 
+import com.example.anzhuo.petfamliy.AdapterInfo.MyUser;
 import com.example.anzhuo.petfamliy.Main.MainActivity;
-import com.example.anzhuo.petfamliy.Mine.Base.User;
 import com.example.anzhuo.petfamliy.R;
-
-import cn.bmob.v3.BmobUser;
 
 /**
  * 设置页面
@@ -54,7 +52,7 @@ public class MineSettingActivity extends Activity {
             @Override
             public void onClick(View v) {
 
-                User.logOut();
+                MyUser.logOut();
                 Intent intent=new Intent(MineSettingActivity.this, MainActivity.class);
                 startActivity(intent);
                 finish();

@@ -18,17 +18,18 @@ import java.util.List;
  * Created by anzhuo on 2016/11/9.
  */
 
-public class MyHomePostBaseAdapter  extends BaseAdapter{
+public class MyHomePostBaseAdapter extends BaseAdapter {
     List<Post> list;
     Context context;
 
-    public  MyHomePostBaseAdapter(Context context,List<Post> list){
-        this.context=context;
-        this.list=list;
+    public MyHomePostBaseAdapter(Context context, List<Post> list) {
+        this.context = context;
+        this.list = list;
     }
+
     @Override
     public int getCount() {
-        return list==null?0:list.size();
+        return list == null ? 0 : list.size();
     }
 
     @Override
@@ -44,23 +45,26 @@ public class MyHomePostBaseAdapter  extends BaseAdapter{
     @Override
     public View getView(int i, View view, ViewGroup viewGroup) {
         ViewHolder viewHolder;
-        if(view==null){
-            view= LayoutInflater.from(context).inflate(R.layout.mine_home_post_item,null);
-            viewHolder=new ViewHolder();
-            viewHolder.post_title= (TextView) view.findViewById(R.id.post_title);
-            viewHolder.post_content= (ImageView) view.findViewById(R.id.post_content);
+        if (view == null) {
+            view = LayoutInflater.from(context).inflate(R.layout.mine_home_post_item, null);
+            viewHolder = new ViewHolder();
+            viewHolder.post_title = (TextView) view.findViewById(R.id.post_title);
+            viewHolder.post_content = (ImageView) view.findViewById(R.id.post_content);
+            viewHolder.send_time = (TextView) view.findViewById(R.id.send_time);
             view.setTag(viewHolder);
         }
-         viewHolder= (ViewHolder) view.getTag();
-         Post tiezi=list.get(i);
-         viewHolder.post_title.setText(tiezi.getContent());
+        viewHolder = (ViewHolder) view.getTag();
+        Post tiezi = list.get(i);
+        viewHolder.post_title.setText(tiezi.getContent());
         Glide.with(context).load(tiezi.getImage().getUrl()).into(viewHolder.post_content);
+        viewHolder.send_time.setText(tiezi.getCreatedAt());
         return view;
     }
 
-    class  ViewHolder{
+    class ViewHolder {
         TextView post_title;
         ImageView post_content;
+        TextView send_time;
 
     }
 }

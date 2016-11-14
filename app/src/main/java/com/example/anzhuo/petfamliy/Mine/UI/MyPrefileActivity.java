@@ -8,9 +8,7 @@ import android.widget.Button;
 import android.widget.ImageView;
 import android.widget.TextView;
 
-import com.bumptech.glide.Glide;
 import com.example.anzhuo.petfamliy.AdapterInfo.MyUser;
-import com.example.anzhuo.petfamliy.Mine.Base.User;
 import com.example.anzhuo.petfamliy.R;
 
 import cn.bmob.v3.BmobUser;
@@ -46,7 +44,7 @@ public class MyPrefileActivity extends Activity {
             else {
                 iv_head.setImageResource(R.mipmap.share_personal_default);
             }
-            String name = (String) BmobUser.getObjectByKey("nickname");
+            String name = (String) BmobUser.getObjectByKey("nickName");
             String age= (String) BmobUser.getObjectByKey("age");
             String number= (String) BmobUser.getObjectByKey("number");
             tv_number.setText(number);
